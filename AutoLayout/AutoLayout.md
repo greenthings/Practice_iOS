@@ -116,13 +116,28 @@ Multiple Boxes
 Full Superview
 ```
      let purpleView = UIView()
-        purpleView.backgroundColor = .purple
-        view.addSubview(purpleView)
-        purpleView.fillSuperview()
+     purpleView.backgroundColor = .purple
+     
+     view.addSubview(purpleView)
+     purpleView.fillSuperview()
         
     func fillSuperview(){
         anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
     }
+```
+
+```
+import SnapKit
+
+     let purpleView = UIView()
+     purpleView.backgroundColor = .purple
+     
+     self.view.addSubview(purpleView)
+        purpleView.snp.makeConstraints { make in
+            make.width.height.equalTo(self.view)
+        }
+
+
 ```
 
 ![image](https://user-images.githubusercontent.com/69499549/182372090-6ab7dddc-6363-4117-9e9a-a5839317ae99.png)
